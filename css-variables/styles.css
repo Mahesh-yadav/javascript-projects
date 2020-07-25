@@ -1,0 +1,52 @@
+:root{
+    --img-padding: 10px;
+    --img-blur: 1px;
+    --img-bg-color: #43c721;
+    --img-grayscale: 0%;
+    font-family: Helvetica, sans-serif;
+
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+body{
+    text-align: center;
+}
+
+.highlight {
+    color: var(--img-bg-color);
+}
+
+.form{
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.form-control{
+    margin-bottom: 1rem;
+}
+
+.form-control label{
+    width: 150px;
+    display: inline-block;
+}
+
+.form-control input{
+    vertical-align: middle;
+    width: 150px;
+}
+
+.img-container img{
+    width: 500px;
+    padding: var(--img-padding);
+    background-color: var(--img-bg-color);
+    filter: blur(var(--img-blur)) grayscale(var(--img-grayscale));
+}
+
