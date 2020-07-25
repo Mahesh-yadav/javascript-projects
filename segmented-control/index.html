@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segmented control</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section class="using-js">
+        <h1 class="section-heading">Solution using Vanilla Javascript</h1>
+        <div class="desktop-select">
+            <div class="option selected" data-position="0">Sort by price</div>
+            <div class="option" data-position="1">Sort by name</div>
+            <div class="option" data-position="2">Sort by relevance</div>
+        </div>
+    
+        <form class="mobile-select">
+            <label for="sort" hidden>Sort Type</label>
+            <select name="sort" id="sort">
+                <option value="price" selected>Sort by price</option>
+                <option value="name">Sort by name</option>
+                <option value="relevance">Sort by relevance</option>
+            </select>
+        </form>
+    </section>
+    <section id="using-vue">
+        <h1 class="section-heading">Solution using  Vue.js</h1>
+        <div class="desktop-select">
+            <div class="option" v-for="option in options" :key="option.value" :class="{selected: selectedOption === option.value}" @click="selectedOption = option.value">
+                {{option.label}}
+            </div>
+        </div>
+        <form class="mobile-select">
+            <label for="sort2" hidden>Sort Type</label>
+            <select name="sort2" id="sort2" v-model="selectedOption">
+                <option v-for="option in options" :key="option.value" :value="option.value" :selected="option.value === selectedOption">
+                    {{option.label}}
+                </option>
+            </select>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
