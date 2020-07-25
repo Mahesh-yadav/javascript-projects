@@ -1,0 +1,7 @@
+{
+  "name": "clock",
+  "version": "1.0.0",
+  "description": "A clock using css and js",
+  "main": "index.js",
+  "license": "MIT"
+}
