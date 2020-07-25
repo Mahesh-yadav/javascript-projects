@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+html{
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+*{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.javascript, #vue-app{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #014e56;
+    padding: 5rem 5rem 10rem;
+}
+
+#vue-app{
+    background-color: #004047;
+}
+
+.section-heading{
+    font-size: 2.4rem;
+    color: white;
+    text-align: center;
+}
+
+.container{
+    padding: 5rem 3rem;
+    background-color: white;
+}
+
+.tab-controls{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tab-control{
+    margin: 1rem;
+    padding: 0.3rem 1.6rem;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tab-control:hover{
+    opacity: 0.5;
+}
+
+.tab-control svg{
+    width: 3rem;
+    height: 3rem;
+}
+
+.tab-control path{
+    fill: #999797;
+}
+
+.control-label{
+    display: none;
+}
+
+.active{
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.active path{
+    fill: #428BFF;
+}
+
+.tab-content section{
+    display: none;
+    position: relative;
+    animation: section-fade-up .5s;
+    height: 30rem;
+    padding: 3rem;
+    margin-top: 2rem;
+    border: .1rem solid gainsboro;
+    border-radius: 1rem;
+}
+
+.tab-content .content-heading{
+    font-size: 2.4rem;
+    color: #428BFF;
+    position: relative;
+}
+
+.tab-content .content-heading::after{
+    content: '';
+    width: 4rem;
+    height: .4rem;
+    background-color: #428BFF;
+    position: absolute;
+    left: 0;
+    top: 120%;
+}
+
+.tab-content p{
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: gray;
+}
+
+.tab-content p span{
+    font-weight: bold;
+}
+
+.tab-content .show{
+    display: block;
+}
+
+@keyframes section-fade-up{
+    0%{
+        top: 3rem;
+        opacity: 0;
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@media (min-width: 601px){
+    .section-heading{
+        font-size: 3.2rem;
+    }
+    .tab-control{
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 0.6rem 1.6rem;
+        position: relative;
+    }
+
+    .active .control-label{
+        color: #428BFF;
+    }
+
+    .control-label{
+        display: block;
+        font-size: 1.6rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    .control-label::after{
+        content: '';
+        width: 70%;
+        height: .3rem;
+        background-color:transparent;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 110%;
+    }
+
+    .active .control-label::after{
+        background-color: #428BFF;
+    }
+
+    .tab-content .content-heading{
+        display: none;
+    }
+}
