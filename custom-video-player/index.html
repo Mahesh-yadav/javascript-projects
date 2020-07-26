@@ -12,6 +12,41 @@
     ></script>
   </head>
   <body>
-    <script src="./js/script.js"></script>
+    <h1>Custom Video Player</h1>
+    <video
+      src="./videos/gone.mp4"
+      id="video"
+      class="screen"
+      poster="./images/poster.png"
+      controls
+    >
+      <p>
+        Your browser doesn't support HTML5 video. Here is a
+        <a href="./videos/gone.mp4">link to the video</a> instead.
+      </p>
+    </video>
+    <div class="video-controls">
+      <button class="btn" id="play">
+        <i class="fa fa-play"></i>
+      </button>
+      <button class="btn" id="stop">
+        <i class="fa fa-stop"></i>
+      </button>
+      <input
+        type="range"
+        id="progress"
+        class="progress"
+        min="0"
+        max="100"
+        step=".1"
+        value="0"
+      />
+      <div class="timestamp">
+        <span id="current-time">00:00</span>
+        /
+        <span id="duration">00:00</span>
+      </div>
+    </div>
+    <script src="./js/custom-player.js"></script>
   </body>
 </html>
