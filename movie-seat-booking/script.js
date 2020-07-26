@@ -8,6 +8,7 @@ const appState = {
   _price: 10,
   _count: 0,
   _title: 'Avengers Endgame',
+  selectedSeats: [],
 
   get ticketPrice() {
     return this._price;
@@ -36,9 +37,12 @@ const appState = {
 // Handle movie selection
 movieSelect.addEventListener('input', (e) => {
   const [title, price] = e.target.value.split(':');
-  console.log(movieSelect.selectedIndex);
   appState.ticketPrice = Number(price);
   appState.screenTitle = title;
+
+  localStorage.setItem('ticketPrice', price);
+  localStorage.setItem('screenTitle', title);
+  localStorage.setItem('selectedIndex', e.target.selectedIndex);
 });
 
 // Handle seat selection
@@ -52,8 +56,40 @@ seatsContainer.addEventListener('click', (e) => {
 
     if (e.target.classList.contains('selected')) {
       appState.seatsCount += 1;
+      appState.selectedSeats.push(e.target.dataset.index);
+      localStorage.setItem(
+        'selectedSeats',
+        JSON.stringify(appState.selectedSeats)
+      );
     } else {
       appState.seatsCount -= 1;
+      appState.selectedSeats = appState.selectedSeats.filter(
+        (seat) => seat !== e.target.dataset.index
+      );
+      localStorage.setItem(
+        'selectedSeats',
+        JSON.stringify(appState.selectedSeats)
+      );
     }
+
+    localStorage.setItem('seatCount', appState.seatsCount);
   }
 });
+
+// Load data from localStorage and update UI
+function populateUI() {
+  appState.seatsCount = Number(localStorage.getItem('seatCount')) || 0;
+  appState.screenTitle =
+    localStorage.getItem('screenTitle') || 'Avengers Endgame';
+  appState.ticketPrice = Number(localStorage.getItem('ticketPrice')) || 10;
+  appState.selectedSeats =
+    JSON.parse(localStorage.getItem('selectedSeats')) || [];
+
+  movieSelect.selectedIndex = localStorage.getItem('selectedIndex') || 0;
+
+  for (let seat of appState.selectedSeats) {
+    document.querySelector(`[data-index='${seat}']`).classList.add('selected');
+  }
+}
+
+populateUI();
