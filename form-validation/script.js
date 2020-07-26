@@ -4,6 +4,7 @@ const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const password2 = document.querySelector('#password2');
 
+// validate each input when user finishes entering value
 form.addEventListener('focusout', (e) => {
   const input = e.target;
 
@@ -25,6 +26,7 @@ form.addEventListener('focusout', (e) => {
   }
 });
 
+// validate each input value whenever it changes after first attempt
 form.addEventListener('input', (e) => {
   const input = e.target;
 
@@ -51,6 +53,7 @@ form.addEventListener('input', (e) => {
   }
 });
 
+// validate all inputs when form is submitted
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -65,6 +68,7 @@ form.addEventListener('submit', (e) => {
   }
 });
 
+// reset all input values to their initial state
 function resetForm() {
   username.value = '';
   username.dataset.error = false;
@@ -81,6 +85,7 @@ function resetForm() {
   }
 }
 
+// Adds error styles to input and error message
 function showError(input, msg) {
   const formGroup = input.parentElement;
   formGroup.classList.add('error');
@@ -89,12 +94,14 @@ function showError(input, msg) {
   errorElem.innerText = msg;
 }
 
+// remove error styles if any and add success styles
 function showSuccess(input) {
   const formGroup = input.parentElement;
   formGroup.classList.remove('error');
   formGroup.classList.add('success');
 }
 
+// validation rules for username field
 function validateUsername({ min, max }) {
   username.dataset.error = true;
 
@@ -112,6 +119,7 @@ function validateUsername({ min, max }) {
   }
 }
 
+// validation rules for email field
 function validateEmail() {
   email.dataset.error = true;
 
@@ -127,6 +135,7 @@ function validateEmail() {
   }
 }
 
+// validation rules for password field
 function validatePassword({ min }) {
   password.dataset.error = true;
 
@@ -143,6 +152,7 @@ function validatePassword({ min }) {
   }
 }
 
+// validation rules for confirm password field
 function confirmPassword() {
   password2.dataset.error = true;
 
