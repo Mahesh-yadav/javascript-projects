@@ -1,0 +1,117 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  --primary-color: #5fbaa7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 2rem;
+}
+
+.money-img {
+  width: 15rem;
+}
+
+h1 {
+  margin: 3rem 0;
+  color: var(--primary-color);
+  font-size: 3.2rem;
+  text-align: center;
+}
+
+p {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.currency {
+  width: 35rem;
+  padding: 4rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.currency select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  width: 8rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.3rem;
+  font-size: 1.6rem;
+  background-color: transparent;
+  background-image: url(./images/up-icon.svg);
+  background-repeat: no-repeat;
+  background-position: right 1rem top 50%;
+  background-size: 1.2rem auto;
+}
+
+.currency option {
+  font-weight: normal;
+}
+
+.currency input {
+  font-size: 2.4rem;
+  padding: 0.6rem 1rem;
+  width: 8rem;
+  border: none;
+  background-color: transparent;
+  text-align: right;
+  border: 1px solid #ddd;
+  border-radius: 0.3rem;
+}
+
+.currency select:hover,
+.currency input:hover {
+  background-color: #ddd;
+}
+
+.currency .amount {
+  font-size: 2.4rem;
+}
+
+.swap-rate-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  width: 8rem;
+  color: white;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border: 0.1rem solid var(--primary-color);
+  border-radius: 0.4rem;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 0.5rem 0;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.rate {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  text-align: right;
+}
