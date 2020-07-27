@@ -69,12 +69,13 @@ p {
 .currency input {
   font-size: 2.4rem;
   padding: 0.6rem 1rem;
-  width: 8rem;
+  width: 18rem;
   border: none;
   background-color: transparent;
   text-align: right;
   border: 1px solid #ddd;
   border-radius: 0.3rem;
+  cursor: pointer;
 }
 
 .currency select:hover,
@@ -114,4 +115,8 @@ p {
   font-size: 1.6rem;
   color: var(--primary-color);
   text-align: right;
+}
+
+.rate-error {
+  color: orangered;
 }
