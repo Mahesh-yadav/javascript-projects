@@ -13,3 +13,7 @@ Select countries to get the exchange rate for a specific amount
 ## APIs used
 
 1. `fetch` API
+
+## Screenshots
+
+![Exchange Rate Home](./screenshot/exchange_rate.png)

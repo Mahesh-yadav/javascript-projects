@@ -14,3 +14,17 @@ Simple landing page with sliding menu and modal
 1. DOM event handling
 2. CSS **`position`**, **`transform`**, and **`transition`** properties
 3. **`CSS Flexbox`** and **`CSS Variables`**
+
+## Screenshots
+
+1. ### Landing Page
+
+   ![Landing Page](./screenshots/landing-page.png)
+
+2. ### Landing Page Menu on left
+
+![Landing Page Menu](./screenshots/menu-slide.png)
+
+3. ### Modal
+
+![Modal](./screenshots/modal.png)
