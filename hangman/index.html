@@ -64,28 +64,24 @@
       </svg>
 
       <div class="word" id="word">
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
-        <div class="letter"></div>
+        <!-- Dynamically add correctly guessed letters of word -->
       </div>
 
       <div class="wrong-letters" id="wrong-letters">
-        <p>Wrong Letters</p>
-        <span>a, d, e</span>
+        <!-- Dynamically add wrongly guessed letters of word -->
       </div>
     </div>
 
-    <div class="popup-container" id="popup-container">
+    <div class="popup-container" id="popup">
       <div class="popup">
-        <h2 id="message">You Have Won</h2>
+        <h2 id="message"></h2>
+        <p id="reveal-word"></p>
         <button id="play-btn">Play Again</button>
       </div>
     </div>
 
     <div class="notification" id="notification">
-      <p>You have already entered this letter</p>
+      <p id="notification-text"></p>
     </div>
 
     <script src="script.js"></script>

@@ -64,7 +64,7 @@ body {
   text-align: center;
 }
 
-.wrong-letters {
+.wrong-letters .text {
   font-size: 1.6rem;
   background-color: red;
   padding: 1rem 3rem;
@@ -96,6 +96,11 @@ body {
 
 .popup h2 {
   font-size: 3.2em;
+  margin-bottom: 2rem;
+}
+
+.popup p {
+  font-size: 2rem;
   margin-bottom: 2rem;
 }
 
