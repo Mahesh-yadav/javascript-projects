@@ -1,4 +1,4 @@
-const words = ['program', 'script', 'styles', 'frontend', 'backend'];
+const words = wordList;
 const MAX_WRONG_GUESSES = 6;
 let randomWord = getRandomWord();
 
@@ -64,6 +64,8 @@ playBtn.addEventListener('click', () => {
   correctLetters.clear();
   wrongLetters.clear();
   wrongLettersWrapper.innerHTML = '';
+  resultMsg.innerText = '';
+  resultRevealWord.innerText = '';
   displayWord();
   updateFigure();
 });
@@ -74,6 +76,7 @@ function checkGameStatus() {
 
   if (wordGuessed === randomWord) {
     resultMsg.innerText = 'Congratulations! You won! 😃';
+    resultRevealWord.innerText = `You guessed "${randomWord}" correctly`;
     popup.style.display = 'flex';
   }
 
