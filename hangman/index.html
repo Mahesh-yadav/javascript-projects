@@ -7,6 +7,60 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <h1 class="heading">Hangman</h1>
+    <p class="text">Find the hidden word - Enter a letter</p>
+
+    <div class="game-container">
+      <svg class="figure-container" width="240px" height="250px">
+        <!-- POLE -->
+        <line x1="20px" y1="230px" x2="100" y2="230px"></line>
+        <line x1="60px" y1="230px" x2="60px" y2="20px"></line>
+        <line x1="60px" y1="20px" x2="140px" y2="20px"></line>
+        <line x1="140px" y1="20px" x2="140px" y2="50px"></line>
+
+        <!-- FIGURE -->
+        <!-- HEAD -->
+        <circle cx="140px" cy="70px" r="20px" class="figure-part"></circle>
+        <!-- BODY -->
+        <line
+          x1="140px"
+          y1="90px"
+          x2="140px"
+          y2="150px"
+          class="figure-part"
+        ></line>
+        <!-- ARMS -->
+        <line
+          x1="140px"
+          y1="120px"
+          x2="120px"
+          y2="100px"
+          class="figure-part"
+        ></line>
+        <line
+          x1="140px"
+          y1="120px"
+          x2="160px"
+          y2="100px"
+          class="figure-part"
+        ></line>
+        <!-- LEGS -->
+        <line
+          x1="140px"
+          y1="150px"
+          x2="120px"
+          y2="170px"
+          class="figure-part"
+        ></line>
+        <line
+          x1="140px"
+          y1="150px"
+          x2="160px"
+          y2="170px"
+          class="figure-part"
+        ></line>
+      </svg>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

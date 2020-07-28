@@ -1,0 +1,42 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #34495e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+}
+
+.heading {
+  font-size: 3.2rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.text {
+  font-size: 1.6rem;
+}
+
+.figure-container {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  margin: 4rem 0;
+}
+
+.figure-part {
+  visibility: hidden;
+}
