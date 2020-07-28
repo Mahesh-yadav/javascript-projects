@@ -10,9 +10,9 @@ Select countries to get the exchange rate for a specific amount
 - Update UI on amount change
 - Swap country rates
 
-## APIs used
+## Concepts used
 
-1. `fetch` API
+1. **`fetch`** API
 
 ## Screenshots
 
