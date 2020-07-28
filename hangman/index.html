@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1 class="heading">Hangman</h1>
-    <p class="text">Find the hidden word - Enter a letter</p>
+    <header>
+      <h1 class="heading">Hangman</h1>
+      <p class="text">Find the hidden word - Enter a letter</p>
+    </header>
 
     <div class="game-container">
       <svg class="figure-container" width="240px" height="250px">
@@ -60,7 +62,32 @@
           class="figure-part"
         ></line>
       </svg>
+
+      <div class="word" id="word">
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+        <div class="letter"></div>
+      </div>
+
+      <div class="wrong-letters" id="wrong-letters">
+        <p>Wrong Letters</p>
+        <span>a, d, e</span>
+      </div>
     </div>
+
+    <div class="popup-container" id="popup-container">
+      <div class="popup">
+        <h2 id="message">You Have Won</h2>
+        <button id="play-btn">Play Again</button>
+      </div>
+    </div>
+
+    <div class="notification" id="notification">
+      <p>You have already entered this letter</p>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

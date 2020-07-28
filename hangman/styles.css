@@ -13,10 +13,11 @@ html {
 body {
   background-color: #34495e;
   color: white;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   align-items: center;
+  overflow: hidden;
 }
 
 .heading {
@@ -29,14 +30,100 @@ body {
   font-size: 1.6rem;
 }
 
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem 0;
+}
+
 .figure-container {
   fill: transparent;
   stroke: white;
   stroke-width: 4px;
   stroke-linecap: round;
-  margin: 4rem 0;
+  margin-bottom: 4rem;
 }
 
 .figure-part {
   visibility: hidden;
+}
+
+.word {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.letter {
+  font-size: 3.2rem;
+  font-weight: bold;
+  width: 3rem;
+  height: 4.5rem;
+  border-bottom: 3px solid #2980b9;
+  margin: 0.5rem;
+  text-align: center;
+}
+
+.wrong-letters {
+  font-size: 1.6rem;
+  background-color: red;
+  padding: 1rem 3rem;
+  text-align: center;
+  border-radius: 0.5rem;
+}
+
+.popup-container {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* display: flex; */
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  background-color: #2980b9;
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.popup h2 {
+  font-size: 3.2em;
+  margin-bottom: 2rem;
+}
+
+.popup button {
+  background-color: white;
+  color: #2980b9;
+  cursor: pointer;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  transition: transform 0.3s;
+  border-radius: 0.5rem;
+}
+
+.popup button:active {
+  transform: scale(0.98);
+}
+
+.notification {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1rem 3rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-size: 1.6rem;
+  position: absolute;
+  bottom: -4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.notification.show {
+  bottom: 0;
 }
