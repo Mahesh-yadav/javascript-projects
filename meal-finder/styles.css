@@ -126,6 +126,7 @@ body {
   background-color: white;
   color: #2d2013;
   border-radius: 0.5rem;
+  visibility: hidden;
 }
 
 .meal-details .meal-header {
@@ -164,6 +165,25 @@ body {
 .meal-details .youtube {
   font-size: 4rem;
   color: red;
+}
+
+.meal-details .ingredients-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.meal-details .ingredient-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0 3rem;
+}
+
+.meal-details .ingredient-icons img {
+  margin: 1rem;
+  width: 5rem;
+  height: 5rem;
 }
 
 .meal-details .ingredients {
