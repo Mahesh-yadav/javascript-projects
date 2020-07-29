@@ -21,8 +21,10 @@ btnRandom.addEventListener('click', async () => {
 
 // handle click for dispaly meal details
 mealsWrapper.addEventListener('click', (e) => {
-  selectedMeal = meals[Number(e.target.dataset.position)];
-  displayMealDetails();
+  if (e.target.hasAttribute('data-position')) {
+    selectedMeal = meals[Number(e.target.dataset.position)];
+    displayMealDetails();
+  }
 });
 
 // Handle search
