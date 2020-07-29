@@ -1,0 +1,244 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #2d2013;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 2rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.container h1 {
+  font-size: 3.2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.search-controls {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 1rem;
+}
+
+.search-form input {
+  width: 20rem;
+  height: 4rem;
+  font-size: 1.6rem;
+  padding-left: 1.6rem;
+  border: none;
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+
+.search-controls button {
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  border-radius: 0 0.4rem 0.4rem 0;
+  font-size: 1.6rem;
+  cursor: pointer;
+  background-color: #dedede;
+}
+
+.search-controls button[type='button'] {
+  border-radius: 0.4rem;
+}
+
+.search-controls button:hover {
+  background-color: #bcbcbc;
+}
+
+.meals {
+  margin-bottom: 5rem;
+}
+
+.meals h2 {
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.meal-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.meal-list .meal {
+  width: 20rem;
+  height: 20rem;
+  border: 4px solid white;
+  border-radius: 0.3rem;
+  margin: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.meal-list .meal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.meal-list .meal .name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+.meal-list .meal .name:hover {
+  opacity: 1;
+}
+
+.meal-details {
+  width: 35rem;
+  margin: 0 auto;
+  background-color: white;
+  color: #2d2013;
+  border-radius: 0.5rem;
+}
+
+.meal-details .meal-header {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.meal-details .meal-header img {
+  width: 100%;
+  object-fit: cover;
+  border: 1rem solid white;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.meal-details .meal-info {
+  margin: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #2d2013;
+}
+
+.meal-details .meal-info h2 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+}
+
+.meal-details .meal-info p {
+  border: 1px solid #2d2013;
+  border-radius: 0.5rem;
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  display: inline-block;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.meal-details .youtube {
+  font-size: 4rem;
+  color: red;
+}
+
+.meal-details .ingredients {
+  margin: 1rem;
+  border-bottom: 1px solid #2d2013;
+  padding-bottom: 1rem;
+}
+
+.meal-details .instructions {
+  margin: 1rem;
+  padding-bottom: 3rem;
+}
+
+.meal-details h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.meal-details .ingredients ul,
+.meal-details .instructions ol {
+  padding-left: 2rem;
+}
+
+.meal-details li {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  line-height: 2rem;
+}
+
+.meal-details li span {
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+@media (min-width: 576px) {
+  .container h1 {
+    font-size: 4.8rem;
+    margin-top: 3rem;
+  }
+  .search-form input {
+    width: 30rem;
+  }
+  .meal-details {
+    width: 40rem;
+    padding: 1rem;
+  }
+  .meal-details .meal-header img {
+    border: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .meal-details {
+    width: 80rem;
+  }
+  .meal-details .meal-header {
+    flex-direction: row;
+    margin-bottom: 3rem;
+    border: 1px solid #2d2013;
+    border-radius: 0.5rem;
+  }
+
+  .meal-details .meal-header img {
+    width: 50%;
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  .meal-details .meal-info {
+    width: 50%;
+    padding-left: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
