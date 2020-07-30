@@ -12,31 +12,22 @@
       <h1>Income Expense Tracker</h1>
       <section class="balance">
         <h2>Your balance</h2>
-        <p>$0.00</p>
+        <p id="balance">$0.00</p>
       </section>
       <section class="dashboard">
         <div class="income">
           <h2>Income</h2>
-          <p>$0.00</p>
+          <p id="income">$0.00</p>
         </div>
         <div class="expense">
           <h2>Expense</h2>
-          <p>$0.00</p>
+          <p id="expense">$0.00</p>
         </div>
       </section>
       <section class="history">
         <h2>Transactions History</h2>
-        <ul class="transactions-list">
-          <li class="transaction plus">
-            <button class="btn-delete">X</button>
-            <span>Salary</span>
-            <span>+1000</span>
-          </li>
-          <li class="transaction minus">
-            <button class="btn-delete">X</button>
-            <span>Electricity Bill</span>
-            <span>-100</span>
-          </li>
+        <ul class="transactions-list" id="transactions">
+          <!-- dynamically add transactions -->
         </ul>
       </section>
       <section class="add-new">
