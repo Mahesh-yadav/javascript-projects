@@ -8,6 +8,69 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <main class="container">
+      <h1>Income Expense Tracker</h1>
+      <section class="balance">
+        <h2>Your balance</h2>
+        <p>$0.00</p>
+      </section>
+      <section class="dashboard">
+        <div class="income">
+          <h2>Income</h2>
+          <p>$0.00</p>
+        </div>
+        <div class="expense">
+          <h2>Expense</h2>
+          <p>$0.00</p>
+        </div>
+      </section>
+      <section class="history">
+        <h2>Transactions History</h2>
+        <ul class="transactions-list">
+          <li class="transaction plus">
+            <button class="btn-delete">X</button>
+            <span>Salary</span>
+            <span>+1000</span>
+          </li>
+          <li class="transaction minus">
+            <button class="btn-delete">X</button>
+            <span>Electricity Bill</span>
+            <span>-100</span>
+          </li>
+        </ul>
+      </section>
+      <section class="add-new">
+        <h2>Add new transaction</h2>
+        <form>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" />
+          </div>
+          <div class="form-group">
+            <label for="amount">Amount($)</label>
+            <input type="number" id="amount" min="0" step=".01" />
+          </div>
+          <fieldset>
+            <legend>Transaction type</legend>
+            <div class="form-group-radio">
+              <input
+                checked
+                type="radio"
+                id="income"
+                name="type"
+                value="income"
+              />
+              <label for="income">Income</label>
+            </div>
+            <div class="form-group-radio">
+              <input type="radio" id="expense" name="type" value="expense" />
+              <label for="expense">Expense</label>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn-add">Add Transaction</button>
+        </form>
+      </section>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

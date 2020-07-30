@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+
+  --income-color: #2ecc71;
+  --expense-color: #c0392b;
+  --balance-color: #14a1a1;
+  --delete-color: #e74c3c;
+  --add-color: #6f5dc9;
+  --font-lg: 3rem;
+  --font-md: 2rem;
+  --font-sm: 1.6rem;
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --bg-primary: #f7f7f7;
+  --bg-secondary: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  padding-bottom: 4rem;
+}
+
+.container h1 {
+  font-size: var(--font-lg);
+  margin: 3rem 0 4rem;
+  text-align: center;
+}
+
+.balance h2 {
+  font-size: var(--font-md);
+  margin-bottom: 0.5rem;
+}
+
+.balance p {
+  font-weight: 700;
+  font-size: var(--font-lg);
+  color: #14a1a1;
+}
+
+.dashboard {
+  background-color: var(--bg-secondary);
+  box-shadow: var(--box-shadow);
+  margin: 2rem 0;
+  padding: 2rem;
+  display: flex;
+}
+
+.dashboard .income,
+.dashboard .expense {
+  padding: 0 4rem;
+  text-align: center;
+}
+
+.dashboard .income {
+  border-right: 1px solid #aaa;
+}
+
+.dashboard .income p {
+  color: var(--income-color);
+}
+
+.dashboard .expense p {
+  color: var(--expense-color);
+}
+
+.dashboard h2 {
+  font-size: var(--font-md);
+  margin-bottom: 0.5rem;
+}
+
+.dashboard p {
+  font-size: var(--font-sm);
+}
+
+.history {
+  margin-top: 1rem;
+  padding: 1rem 0;
+}
+
+.history h2,
+.add-new h2 {
+  font-size: var(--font-md);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #aaa;
+}
+
+.transactions-list {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+.transaction {
+  width: 90%;
+  margin-left: auto;
+  box-shadow: var(--box-shadow);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 1rem;
+  font-size: var(--font-sm);
+  background-color: var(--bg-secondary);
+  margin-bottom: 1rem;
+  position: relative;
+  animation: fromBottom 1s;
+}
+
+.transaction span:last-child {
+  font-size: var(--font-sm);
+}
+
+.transaction.plus {
+  border-right: 4px solid var(--income-color);
+}
+
+.transaction.minus {
+  border-right: 4px solid var(--expense-color);
+}
+
+.btn-delete {
+  background-color: var(--delete-color);
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1rem;
+  position: absolute;
+  top: 0.5rem;
+  left: -3.4rem;
+  font-size: var(--font-md);
+  cursor: pointer;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+
+.transaction:hover .btn-delete {
+  visibility: visible;
+}
+
+.add-new {
+  margin-top: 2rem;
+}
+
+.add-new form {
+  margin-top: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-size: var(--font-sm);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  height: 4rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+  padding-left: 1rem;
+  font-size: var(--font-sm);
+}
+
+fieldset {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+}
+
+fieldset legend {
+  font-size: var(--font-sm);
+}
+
+.form-group-radio {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  font-size: var(--font-sm);
+}
+
+.form-group-radio input {
+  margin-right: 1rem;
+}
+
+.btn-add {
+  width: 100%;
+  text-align: center;
+  background-color: var(--add-color);
+  color: white;
+  border: none;
+  padding: 1rem 0;
+  font-size: var(--font-sm);
+  cursor: pointer;
+}
+
+.btn-add:hover {
+  background-color: rgba(111, 93, 201, 0.8);
+}
+
+@keyframes fromBottom {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    top: 2rem;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+  }
+}
