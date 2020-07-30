@@ -5,9 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music Player</title>
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <h1 class="main-heading">Music Player</h1>
+    <div id="music-container">
+      <audio controls id="audio" src="./music/summer.mp3">
+        <!-- Fallback content -->
+        <p>
+          Your browser doesn't support HTML5 audio.
+        </p>
+      </audio>
+      <div class="music-controls" id="music-controls">
+        <div class="music-cover">
+          <img src="./images/summer.jpg" alt="music cover" id="cover-image" />
+        </div>
+        <div class="action-btns">
+          <button class="action-btn" id="prev">
+            <i class="fas fa-backward"></i>
+          </button>
+          <button class="action-btn btn-large" id="play">
+            <i class="fas fa-play"></i>
+          </button>
+          <button class="action-btn" id="next">
+            <i class="fas fa-forward"></i>
+          </button>
+        </div>
+        <div class="music-details">
+          <h2 id="music-title" class="title">Summer</h2>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            step="1"
+            value="0"
+            class="seekbar"
+            id="seekbar"
+          />
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
