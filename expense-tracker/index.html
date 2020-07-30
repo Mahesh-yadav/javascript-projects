@@ -32,14 +32,14 @@
       </section>
       <section class="add-new">
         <h2>Add new transaction</h2>
-        <form>
+        <form id="add-form">
           <div class="form-group">
             <label for="title">Title</label>
-            <input type="text" id="title" />
+            <input type="text" id="title" required />
           </div>
           <div class="form-group">
             <label for="amount">Amount($)</label>
-            <input type="number" id="amount" min="0" step=".01" />
+            <input type="number" id="amount" min="0" required />
           </div>
           <fieldset>
             <legend>Transaction type</legend>
@@ -47,15 +47,20 @@
               <input
                 checked
                 type="radio"
-                id="income"
+                id="income-radio"
                 name="type"
                 value="income"
               />
-              <label for="income">Income</label>
+              <label for="income-radio">Income</label>
             </div>
             <div class="form-group-radio">
-              <input type="radio" id="expense" name="type" value="expense" />
-              <label for="expense">Expense</label>
+              <input
+                type="radio"
+                id="expense-radio"
+                name="type"
+                value="expense"
+              />
+              <label for="expense-radio">Expense</label>
             </div>
           </fieldset>
           <button type="submit" class="btn-add">Add Transaction</button>

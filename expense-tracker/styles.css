@@ -140,11 +140,12 @@ body {
   font-size: var(--font-md);
   cursor: pointer;
   transition: all 0.3s;
-  visibility: hidden;
+  opacity: 0;
 }
 
-.transaction:hover .btn-delete {
-  visibility: visible;
+.transaction:hover .btn-delete,
+.btn-delete:hover {
+  opacity: 1;
 }
 
 .add-new {
