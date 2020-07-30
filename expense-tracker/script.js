@@ -7,20 +7,19 @@ const titleInput = document.querySelector('#title');
 const amountInput = document.querySelector('#amount');
 const radioBtnIncome = document.querySelector('#income-radio');
 
-const dummyTransactions = [
-  { id: 1, title: 'Flower', amount: 20, type: 'expense' },
-  { id: 2, title: 'Salary', amount: 300, type: 'income' },
-  { id: 3, title: 'Book', amount: 10, type: 'expense' },
-  { id: 4, title: 'Camera', amount: 150, type: 'income' },
-];
+const localData = localStorage.getItem('transactions');
 
-let transactions = dummyTransactions;
-let idCounter = 4;
+let transactions = localData ? JSON.parse(localData) : [];
+let idCounter = localData ? transactions[transactions.length - 1].id : 0;
 
 loadTransactions();
 showBalIncExpenses();
 
-// load transactions
+function saveData(data) {
+  localStorage.setItem('transactions', JSON.stringify(data));
+}
+
+// render transactions
 function loadTransactions() {
   for (let transaction of transactions) {
     renderTransaction(transaction);
@@ -43,12 +42,13 @@ form.addEventListener('submit', (e) => {
   };
 
   transactions.push(transaction);
+  saveData(transactions);
   renderTransaction(transaction);
   showBalIncExpenses();
 
   idCounter++;
   titleInput.value = '';
-  amountInput.value = '';
+  amountInput.value = 0;
   radioBtnIncome.checked = true;
 });
 
@@ -61,6 +61,7 @@ transactionsEl.addEventListener('click', (e) => {
     liElem.remove();
 
     transactions = transactions.filter((t) => t.id !== id);
+    saveData(transactions);
 
     showBalIncExpenses();
   }
