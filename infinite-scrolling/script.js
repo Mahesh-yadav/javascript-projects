@@ -1,5 +1,6 @@
 const postsContainer = document.querySelector('#posts-container');
 const loader = document.querySelector('.loader');
+const filterInput = document.querySelector('#filter');
 
 const baseURL = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -8,6 +9,26 @@ let page = 1;
 let fetchMore = false;
 
 renderPosts(page);
+
+filterInput.addEventListener('input', filterPosts);
+
+// display filtered posts
+function filterPosts(e) {
+  const filter = e.target.value.toLowerCase();
+
+  const posts = document.querySelectorAll('.post');
+
+  for (let post of posts) {
+    const title = post.querySelector('.post-title').innerText.toLowerCase();
+    const body = post.querySelector('.post-body').innerText.toLowerCase();
+
+    if (title.includes(filter) || body.includes(filter)) {
+      post.style.display = 'block';
+    } else {
+      post.style.display = 'none';
+    }
+  }
+}
 
 // fetch and display posts while scrolling
 window.addEventListener('scroll', () => {
