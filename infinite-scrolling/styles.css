@@ -25,10 +25,12 @@ body {
 
 h1 {
   text-align: center;
+  margin-top: 5rem;
 }
 
 .filter-container {
   margin-top: 3rem;
+  margin-bottom: 5rem;
   width: 80vw;
   max-width: 80rem;
 }
@@ -37,6 +39,8 @@ h1 {
   width: 100%;
   padding: 1rem;
   font-size: 1.6rem;
+  border: none;
+  border-radius: 3px;
 }
 
 .post {
@@ -76,6 +80,7 @@ h1 {
 }
 
 .loader {
+  opacity: 0;
   display: flex;
   position: fixed;
   bottom: 5rem;
