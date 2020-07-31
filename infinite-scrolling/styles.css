@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #296ca8;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 10rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.filter-container {
+  margin-top: 3rem;
+  width: 80vw;
+  max-width: 80rem;
+}
+
+.filter {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+
+.post {
+  margin-top: 3rem;
+  width: 80vw;
+  max-width: 80rem;
+  background-color: #4992d3;
+  padding: 2rem 3rem;
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.number {
+  background-color: white;
+  color: #296ca8;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 0.8rem;
+}
+
+.post-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.post-body {
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+}
+
+.loader {
+  display: flex;
+  position: fixed;
+  bottom: 5rem;
+  transition: opacity 0.3s ease-in;
+}
+
+.loader.show {
+  opacity: 1;
+}
+
+.circle {
+  background-color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  margin: 0.5rem;
+  animation: bounce 0.5s ease-in infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1rem);
+  }
+}
+
+.circle:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+
+.circle:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
