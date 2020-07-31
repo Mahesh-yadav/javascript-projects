@@ -19,3 +19,4 @@ This repo contains various projects implemented using vanilla Javascript
 | 11  |    Segmented Control     |  [Live Demo](./segmented-control/index.html)  |
 | 12  |   Using CSS variables    |    [Live Demo](./css-variables/index.html)    |
 | 13  |       Simple Clock       |        [Live Demo](./clock/index.html)        |
+| 14  |    Infinite Scrolling    | [Live Demo](./infinite-scrolling/index.html)  |
