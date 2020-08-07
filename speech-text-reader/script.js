@@ -6,6 +6,7 @@ const showBtn = document.querySelector('#show');
 const closeBtn = document.querySelector('#close');
 const textBox = document.querySelector('#text-box');
 
+// Voice text boxes data
 const data = [
   {
     image: './images/drink.jpg',
@@ -57,12 +58,14 @@ const data = [
   },
 ];
 
+// render voice boxes
 for (const item of data) {
   createBox(item);
 }
 
 // Store available voices
 let voices = [];
+const speechUtter = new SpeechSynthesisUtterance();
 
 function getVoices() {
   voices = speechSynthesis.getVoices();
@@ -77,6 +80,25 @@ function getVoices() {
 }
 
 speechSynthesis.addEventListener('voiceschanged', getVoices);
+
+function setTextMessage(text) {
+  speechUtter.text = text;
+}
+
+function speakText() {
+  speechSynthesis.speak(speechUtter);
+}
+
+// handle voice change
+voicesSelect.addEventListener('change', (e) => {
+  speechUtter.voice = voices.find((voice) => voice.name === e.target.value);
+});
+
+// speak entered text
+readBtn.addEventListener('click', () => {
+  setTextMessage(textToRead.value);
+  speakText();
+});
 
 // Toggle text box
 showBtn.addEventListener('click', () => {
@@ -96,6 +118,18 @@ function createBox({ image, text }) {
     <img src="${image}" alt="${text}" />
     <p class="info">${text}</p>
   `;
+
+  box.addEventListener('click', () => {
+    setTextMessage(text);
+    speakText();
+
+    // Add active affect
+    box.classList.add('active');
+
+    setTimeout(() => {
+      box.classList.remove('active');
+    }, 800);
+  });
 
   main.appendChild(box);
 }
