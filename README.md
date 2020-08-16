@@ -20,3 +20,4 @@ This repo contains various projects implemented using vanilla Javascript
 | 12  |   Using CSS variables    |    [Live Demo](./css-variables/index.html)    |
 | 13  |       Simple Clock       |        [Live Demo](./clock/index.html)        |
 | 14  |    Infinite Scrolling    | [Live Demo](./infinite-scrolling/index.html)  |
+| 15  |    Text-Speech Reader    | [Live Demo](./speech-text-reader/index.html)  |
